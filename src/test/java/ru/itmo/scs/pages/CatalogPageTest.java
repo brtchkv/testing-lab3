@@ -12,7 +12,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import ru.itmo.scs.*;
 import ru.itmo.scs.exceptions.InvalidPropertiesException;
+import ru.itmo.scs.utils.Config;
 import ru.itmo.scs.utils.Properties;
+import ru.itmo.scs.utils.ReadConfig;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -26,6 +28,8 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 public class CatalogPageTest {
 
     private static final Logger logger = Logger.getLogger(CatalogPageTest.class);
+    private static final Config config = ReadConfig.getConfigFromExternalFile("config.yml");
+
 
     public Context context;
     public List<WebDriver> driverList;
@@ -51,6 +55,14 @@ public class CatalogPageTest {
         str.accept(arguments("gbp"));
         str.accept(arguments("ils"));
         str.accept(arguments("brl"));
+        return str.build();
+    }
+
+    static Stream<Arguments> getSearchStrings() {
+        Stream.Builder<Arguments> str = Stream.builder();
+        str.accept(arguments("building mobile app"));
+        str.accept(arguments("do the lab"));
+        str.accept(arguments("get a diploma"));
         return str.build();
     }
 
@@ -117,6 +129,17 @@ public class CatalogPageTest {
                     break;
             }
 
+            if (webDriver.getClass().getName().equals("FirefoxDriver")) webDriver.quit();
+            else webDriver.close();
+        });
+    }
+
+    @ParameterizedTest(name = "{index}. {0}")
+    @MethodSource("getSearchStrings")
+    void testFreelanceSearch(String searchString) {
+        driverList.forEach(webDriver -> {
+            assertTrue(PageFactory.initElements(webDriver, CatalogPage.class)
+                    .searchForFreelance(searchString).contains(searchString));
             if (webDriver.getClass().getName().equals("FirefoxDriver")) webDriver.quit();
             else webDriver.close();
         });
