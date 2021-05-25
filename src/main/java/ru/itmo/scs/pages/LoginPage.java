@@ -11,9 +11,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/**
- * Created by i.isaev on 14.04.2021.
- */
 public class LoginPage extends Page {
 
     private static final Config config = ReadConfig.getConfigFromExternalFile("config.yml");

@@ -23,9 +23,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-/**
- * Created by i.isaev on 14.04.2021.
- */
 public class ProfilePageTest {
 
     private static final Logger logger = Logger.getLogger(ProfilePageTest.class);

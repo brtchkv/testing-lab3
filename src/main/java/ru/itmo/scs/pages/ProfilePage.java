@@ -12,9 +12,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/**
- * Created by i.isaev on 14.04.2021.
- */
 public class ProfilePage extends Page {
 
     private static final Config config = ReadConfig.getConfigFromExternalFile("config.yml");

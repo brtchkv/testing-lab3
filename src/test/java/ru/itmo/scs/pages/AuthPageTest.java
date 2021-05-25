@@ -21,9 +21,6 @@ import org.openqa.selenium.support.PageFactory;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-/**
- * Created by i.isaev on 14.04.2021.
- */
 public class AuthPageTest {
 
     private static final Logger logger = Logger.getLogger(AuthPageTest.class);

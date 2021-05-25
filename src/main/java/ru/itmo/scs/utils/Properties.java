@@ -7,9 +7,6 @@ import ru.itmo.scs.exceptions.*;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-/**
- * Created by i.isaev on 14.04.2021.
- */
 public class Properties {
 
     private static final Logger logger = Logger.getLogger(Properties.class);

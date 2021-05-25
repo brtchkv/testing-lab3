@@ -9,9 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/**
- * Created by i.isaev on 14.04.2021.
- */
 public class CatalogPage extends Page {
 
     private static final Config config = ReadConfig.getConfigFromExternalFile("config.yml");
