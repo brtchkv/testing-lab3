@@ -83,7 +83,6 @@ public class ProfilePageTest {
                     .authorize(config.getUsernameRegistered(), config.getPasswordRegistered());
             assertEquals(descr, PageFactory.initElements(webDriver, ProfilePage.class)
                     .changeDescription(config.getUsernameRegistered(), descr));
-
             if (webDriver.getClass().getName().equals("FirefoxDriver")) webDriver.quit();
             else webDriver.close();
         });

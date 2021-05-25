@@ -49,6 +49,8 @@ public class ProfilePage extends Page {
                 .until(webDriver1 -> webDriver1.findElement(saveDescriptionButton));
         driver.findElement(saveDescriptionButton).click();
 
+        driver.navigate().refresh();
+
         new WebDriverWait(driver, 10)
                 .until(webDriver1 -> webDriver1.findElement(By.xpath("//*[@id=\"SellerCard-component\"]/div/div[2]/div[2]/div[2]/small")));
 
