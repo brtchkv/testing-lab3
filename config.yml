@@ -1,0 +1,15 @@
+driver:
+  browser: chrome
+  path: src/test/resources
+  downloadPath: src/test/resources
+  uploadFile: src/test/resources/math.jpg
+
+usernameRegistered: gadoyih983
+passwordRegistered: Gadoyih983@brayy.com
+emailRegistered: gadoyih983@brayy.com
+
+usernameToRegister: fifacok853
+passwordToRegister: Fifacok853@64ge.com
+emailToRegister: fifacok853@64ge.com
+
+website: https://www.fiverr.com
